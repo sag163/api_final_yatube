@@ -75,7 +75,7 @@ class TestFollowAPI:
     @pytest.mark.django_db(transaction=True)
     def test_follow_search_filter(self, user_client, follow_1, follow_2, follow_3, follow_4,
                                   user, user_2, another_user):
-        follow_count = Follow.objects.count()
+        Follow.objects.count()
 
         response = user_client.get('/api/v1/follow/')
         assert response.status_code == 200, \
